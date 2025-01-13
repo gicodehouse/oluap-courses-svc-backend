@@ -1,0 +1,11 @@
+services:
+  desafiodb:
+    image: postgres:latest
+    container_name: desafiodb
+    environment:
+      POSTGRES_USER: desafio
+      POSTGRES_PASSWORD: 123@321
+      POSTGRES_DB: desafiodb
+      POSTGRES_ROOT_PASSWORD: 123@321
+    ports:
+      - "5432:5432"
