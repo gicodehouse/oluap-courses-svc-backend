@@ -2,12 +2,13 @@ import * as bcrypt from 'bcrypt';
 
 class PasswordUtils {
 
-  static hashPassword(password: string): string {
-    return bcrypt.hashSync(password, 10);
+  async hashPassword(password: string): Promise<string> {
+    const saltRounds = 10; // O número de rounds de salt
+    return await bcrypt.hash(password, saltRounds);
   }
 
   static comparePassword(password: string, hash: string): boolean {
-    return bcrypt.compareSync(password, hash);
+    return bcrypt.compare(password, hash);
   }
 }
 

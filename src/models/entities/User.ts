@@ -1,36 +1,30 @@
-import PasswordUtils from 'src/utils/PasswordUtils';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+} from 'typeorm';
+import * as bcrypt from 'bcrypt';
 
 @Entity('users')
 class User {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
-    
-    @Column({ unique: true })
-    email: string;
-    
-    @Column()
-    password: string;
-    
-    @CreateDateColumn({ 
-        type: 'timestamp', 
-        default: () => 'CURRENT_TIMESTAMP' 
-    })
-    created_at: Date;
+  @Column()
+  name: string;
 
-    @BeforeInsert()
-    async hashPassword() {
-        this.password = PasswordUtils.hashPassword(this.password);
-    }
+  @Column({ unique: true })
+  email: string;
 
-    @BeforeUpdate()
-    async updateHashPassword() {
-        this.password = PasswordUtils.hashPassword(this.password);
-    }
+  @Column()
+  password: string;
+
+  @CreateDateColumn({
+    type: 'timestamp',
+    default: () => 'CURRENT_TIMESTAMP',
+  })
+  created_at: Date;
 }
 
 export default User;

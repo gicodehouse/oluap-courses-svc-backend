@@ -15,7 +15,11 @@ export class AuthController {
   @ApiResponse({ status: 200, description: 'Login bem-sucedido.' })
   @ApiResponse({ status: 401, description: 'Credenciais inválidas.' })
   @ApiBody(AuthSwaggerExample.API_AUTH_LOGIN)
-  async login(@Body() loginDto: LoginDTO) {       
-    return this.authService.login(this.authService.validateUser(loginDto.email, loginDto.password));  
+  async login(@Body() loginDto: LoginDTO) {
+    const validate = await this.authService.validateUser(
+      loginDto.email,
+      loginDto.password,
+    );
+    return this.authService.login(validate);
   }
 }
