@@ -27,7 +27,6 @@ class EnrollmentController {
   @Get()
   @UseGuards(AuthGuard('jwt'))
   @ApiOperation({ summary: EnrollmentSwaggerExample.API_ENROLLMENT_GET_ALL_DESCRIPTION })
-  @ApiResponse({ status: HttpStatusEnum.CREATED, description: MessageEnumeration.REGISTER_CREATED })
   @ApiResponse({ status: HttpStatusEnum.NOT_FOUND, description: MessageEnumeration.ENROLLMENT_NOT_EXIST })
   @ApiResponse({ status: HttpStatusEnum.UNAUTHORIZED, description: MessageEnumeration.NOT_AUTHORIZED })
   findAll() {
@@ -37,11 +36,19 @@ class EnrollmentController {
   @Get(':id')
   @UseGuards(AuthGuard('jwt'))
   @ApiOperation({ summary: EnrollmentSwaggerExample.API_ENROLLMENT_GET_ONE_DESCRIPTION })
-  @ApiResponse({ status: HttpStatusEnum.CREATED, description: MessageEnumeration.REGISTER_CREATED })
   @ApiResponse({ status: HttpStatusEnum.NOT_FOUND, description: MessageEnumeration.ENROLLMENT_NOT_EXIST })
   @ApiResponse({ status: HttpStatusEnum.UNAUTHORIZED, description: MessageEnumeration.NOT_AUTHORIZED })
   findOne(@Param('id') id: number) {
     return this.enrollmentService.findOne(+id);
+  }
+
+  @Get('/users/:id')
+  @UseGuards(AuthGuard('jwt'))
+  @ApiOperation({ summary: EnrollmentSwaggerExample.API_ENROLLMENT_GET_ALL_BY_USER_ID_DESCRIPTION })
+  @ApiResponse({ status: HttpStatusEnum.NOT_FOUND, description: MessageEnumeration.ENROLLMENT_NOT_EXIST })
+  @ApiResponse({ status: HttpStatusEnum.UNAUTHORIZED, description: MessageEnumeration.NOT_AUTHORIZED })
+  findAllCoursesByUserId(@Param('id') id: number) {
+    return this.enrollmentService.findAllCoursesByUserId(+id);
   }
 
   @Put(':id')

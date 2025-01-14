@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { Repository, In } from "typeorm";
 
 import AlreadyExistException from "src/models/exceptions/AlreadyExistException";
 import MessageEnumeration from "src/models/enums/MessageEnumeration";
@@ -34,6 +34,12 @@ class CourseService {
       throw new NotFoundException(MessageEnumeration.COURSE_NOT_EXIST);
     
     return course;
+  }
+
+  async findByIds(ids: number[]): Promise<Course[]> {
+    return this.repository.find({
+      where: { id: In(ids) },
+    });
   }
 
   async update(id: number, toUpdate: CourseUpdateDTO): Promise<Course> {

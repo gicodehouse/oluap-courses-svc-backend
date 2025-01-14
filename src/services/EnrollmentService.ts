@@ -38,6 +38,12 @@ class EnrollmentService {
         
         return enrollment;
       }
+
+      async findAllCoursesByUserId(id: number){
+        const enrollments = await this.repository.findBy({ user_id: id });
+        const courseIds = enrollments.map((e) => e.course_id);
+        return await this.courseService.findByIds(courseIds);      
+      }
     
       async update(id: number, toUpdate: EnrollmentUpdateDTO): Promise<Enrollment> {
         const enrollment = await this.findOne(id);        

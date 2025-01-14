@@ -13,6 +13,8 @@ class EnrollmentSwaggerExample {
 
     public static readonly API_ENROLLMENT_GET_ONE_DESCRIPTION: string = 'Recuperar um registro de matrícula pelo ID' ;
 
+    public static readonly API_ENROLLMENT_GET_ALL_BY_USER_ID_DESCRIPTION: string = 'Recuperar registros de matrícula pelo ID do Usuário' ;
+
     public static readonly API_ENROLLMENT_UPDATE_ONE_DESCRIPTION: string = 'Atualizar registro de matrícula pelo ID e Corpo com os atributos a serem atualizados' ;
     public static readonly API_ENROLLMENT_UPDATE_ONE: ApiBodyOptions = {
         description: 'Exemplo de atualização de matrícula',
