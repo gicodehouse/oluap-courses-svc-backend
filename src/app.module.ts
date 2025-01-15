@@ -23,6 +23,9 @@ import Enrollment from './models/entities/Enrollment';
       username: process.env.DESAFIO_DB_USER,
       password: process.env.DESAFIO_DB_PASSWORD,
       database: process.env.DESAFIO_DB_NAME,
+      ssl: {
+        rejectUnauthorized: false, // Necessário para conexões TLS com Neon
+      },
       entities: [
         User,
         Course,
