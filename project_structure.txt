@@ -1,0 +1,69 @@
+.
+├── docker-compose.yml
+├── nest-cli.json
+├── package.json
+├── package-lock.json
+├── project_structure.txt
+├── README.md
+├── src
+│   ├── app.controller.spec.ts
+│   ├── app.module.ts
+│   ├── controllers
+│   │   ├── AuthController.ts
+│   │   ├── CourseController.ts
+│   │   ├── EnrollmentController.ts
+│   │   ├── UserController.ts
+│   │   └── WelcomeController.ts
+│   ├── main.ts
+│   ├── models
+│   │   ├── dtos
+│   │   │   ├── auth
+│   │   │   │   └── LoginDTO.ts
+│   │   │   ├── course
+│   │   │   │   ├── CourseDTO.ts
+│   │   │   │   └── CourseUpdateDTO.ts
+│   │   │   ├── enrollment
+│   │   │   │   ├── EnrollmentDTO.ts
+│   │   │   │   └── EnrollmentUpdateDTO.ts
+│   │   │   └── user
+│   │   │       ├── UserDTO.ts
+│   │   │       └── UserUpdateDTO.ts
+│   │   ├── entities
+│   │   │   ├── Couse.ts
+│   │   │   ├── Enrollment.ts
+│   │   │   └── User.ts
+│   │   ├── enums
+│   │   │   ├── HttpStatusEnum.ts
+│   │   │   └── MessageEnumeration.ts
+│   │   ├── exceptions
+│   │   │   ├── AlreadyExistException.ts
+│   │   │   └── filters
+│   │   │       └── CustomExceptionFilter.ts
+│   │   └── swagger-examples
+│   │       ├── AuthSwaggerExample.ts
+│   │       ├── CourseSwaggerExample.ts
+│   │       ├── EnrollmentSwaggerExample.ts
+│   │       └── UserSwaggerExample.ts
+│   ├── modules
+│   │   ├── AuthModule.ts
+│   │   ├── CourseModule.ts
+│   │   ├── EnrollmentModule.ts
+│   │   └── UserModule.ts
+│   ├── security
+│   │   └── strategy
+│   │       └── JwtStrategy.ts
+│   ├── services
+│   │   ├── AuthService.ts
+│   │   ├── CouseService.ts
+│   │   ├── EnrollmentService.ts
+│   │   └── UserService.ts
+│   └── utils
+│       └── PasswordUtils.ts
+├── test
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── tsconfig.build.json
+├── tsconfig.json
+└── vercel.json
+
+19 directories, 47 files
