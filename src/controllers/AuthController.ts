@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import AuthSwaggerExample from 'src/models/swagger-examples/AuthSwaggerExample';
@@ -21,5 +21,10 @@ export class AuthController {
       loginDto.password,
     );
     return this.authService.login(validate);
+  }
+
+  @Get('')
+  async test(){
+    return "HELLO WORLD!";
   }
 }
