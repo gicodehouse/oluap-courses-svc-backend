@@ -10,7 +10,7 @@ import HttpStatusEnum from 'src/models/enums/HttpStatusEnum';
 import EnrollmentDTO from 'src/models/dtos/enrollment/EnrollmentDTO';
 
 @ApiTags('enrollments')
-@Controller('/api/enrollments')
+@Controller('/enrollments')
 class EnrollmentController {
   constructor(private readonly enrollmentService: EnrollmentService) {}
 

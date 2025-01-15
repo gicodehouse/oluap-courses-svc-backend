@@ -10,7 +10,7 @@ import CourseService from 'src/services/CouseService';
 import CourseDTO from 'src/models/dtos/course/CourseDTO';
 
 @ApiTags('courses')
-@Controller('/api/courses')
+@Controller('/courses')
 class CourseController {
   constructor(private readonly courseService: CourseService) {}
 

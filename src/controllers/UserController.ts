@@ -9,7 +9,7 @@ import UserDTO from 'src/models/dtos/user/UserDTO';
 import UserUpdateDTO from 'src/models/dtos/user/UserUpdateDTO';
 
 @ApiTags('users')
-@Controller('/api/users')
+@Controller('/users')
 class UserController {
   constructor(private readonly userService: UserService) {}
 

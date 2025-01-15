@@ -1,7 +1,7 @@
 import { Controller, Get } from "@nestjs/common";
 
 
-@Controller('/')
+@Controller('/welcome')
 class WelcomeController {
       @Get('')
       async test(){

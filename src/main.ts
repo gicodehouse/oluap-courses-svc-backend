@@ -10,6 +10,8 @@ const server = express();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.setGlobalPrefix('api');
+
   // app.useGlobalFilters(new CustomExceptionFilter());
 
   app.useGlobalPipes(
