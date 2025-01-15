@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { EnrollmentModule } from './modules/EnrollmentModule';
 import { AuthModule } from './modules/AuthModule';
 import Enrollment from './models/entities/Enrollment';
+import WelcomeController from './controllers/WelcomeController';
 
 @Module({
   imports: [
@@ -38,5 +39,6 @@ import Enrollment from './models/entities/Enrollment';
     EnrollmentModule,
     AuthModule
   ],
+  controllers: [WelcomeController]
 })
 export class AppModule {}
