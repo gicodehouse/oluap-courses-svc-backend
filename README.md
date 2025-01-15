@@ -117,7 +117,6 @@ DELETE
 Remover registro de curso pelo ID
 ```
 
-
 ### Enrollments
 
 ```
